@@ -17,6 +17,7 @@
 /charger            u:object_r:rootfs:s0
 /init               u:object_r:init_exec:s0
 /sbin(/.*)?         u:object_r:rootfs:s0
+/sbin/su		u:object_r:su_exec:s0
 
 # Empty directories
 /lost\+found        u:object_r:rootfs:s0
@@ -134,6 +135,8 @@
 /dev/uinput		u:object_r:uhid_device:s0
 /dev/uio[0-9]*		u:object_r:uio_device:s0
 /dev/urandom		u:object_r:urandom_device:s0
+/dev/erandom		u:object_r:erandom_device:s0
+/dev/frandom		u:object_r:frandom_device:s0
 /dev/usb_accessory	u:object_r:usbaccessory_device:s0
 /dev/vcs[0-9a-z]*	u:object_r:vcs_device:s0
 /dev/video[0-9]*	u:object_r:video_device:s0
