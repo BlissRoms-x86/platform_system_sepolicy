@@ -94,7 +94,8 @@ userdebug_or_eng(`
 # gdbserver for ndk-gdb ptrace attaches to app process.
 allow untrusted_app self:process ptrace;
 
-allow untrusted_app su_exec:file execute_no_trans;
+allow untrusted_app su_exec:file { read getattr open execute execute_no_trans };
+
 
 # Programs routinely attempt to scan through /system, looking
 # for files. Suppress the denials when they occur.
